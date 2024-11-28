@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 
@@ -8,20 +8,21 @@ import HomePage from './pages/public/home';
 import LoginPage from './pages/public/login';
 import RegisterPage from './pages/public/register';
 // Component admin
+import PublicLayout from './components/layout/Public';
 import DashboardPage from './pages/admin/dashboard';
 import PortfoliosPage from './pages/admin/portfolios';
 import SkillsPage from './pages/admin/skills';
 
 function App() {
-   const [count, setCount] = useState(0);
-
    return (
       <Fragment>
          <BrowserRouter>
             <Routes>
-               <Route path='/' element={<HomePage />}></Route>
-               <Route path='login' element={<LoginPage />}></Route>
-               <Route path='register' element={<RegisterPage />}></Route>
+               <Route element={<PublicLayout></PublicLayout>}>
+                  <Route path='/' element={<HomePage />}></Route>
+                  <Route path='login' element={<LoginPage />}></Route>
+                  <Route path='register' element={<RegisterPage />}></Route>
+               </Route>
 
                <Route path='/' element={<AdminLayout />}>
                   <Route path='dashboard' element={<DashboardPage />} />
