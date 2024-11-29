@@ -31,12 +31,7 @@ const LoginForm = () => {
             <Input.Password placeholder='Password' />
          </Form.Item>
          <Form.Item>
-            <Button
-               // isLoading={isLoading}
-               type='primary'
-               htmlType='submit'
-               style={{ width: '100%' }}
-            >
+            <Button type='primary' htmlType='submit' style={{ width: '100%' }}>
                Log in
             </Button>
          </Form.Item>
